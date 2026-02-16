@@ -224,10 +224,10 @@ namespace {
             this->removeFromParentAndCleanup(true);
         }
     };
-} // namespace
+}
 
 // =======================
-// PlayLayer hooks
+// PlayLayer hookss
 // =======================
 class $modify(FPSGamblePlayLayer, PlayLayer) {
     struct Fields {
@@ -251,8 +251,7 @@ class $modify(FPSGamblePlayLayer, PlayLayer) {
         clearState(this);
         PlayLayer::onExit();
     }
-
-    // Re-arm only after a reset has actually happened (prevents the "second roulette" on auto-restart)
+//uh
     void resetLevel() {
         // During reset pipeline, do not allow roulette triggers
         auto& st = states()[this];
@@ -273,7 +272,7 @@ class $modify(FPSGamblePlayLayer, PlayLayer) {
 
     // scheduleOnce target (no lambdas; works on SEL_SCHEDULE signature)
     void runDeathRoulette(float) {
-        // If we're still in grace, do nothing (and also clear queued)
+        // if somethin happen, do nothin
         if (m_fields->graceActive) {
             auto& st = states()[this];
             st.queued = false;
@@ -321,7 +320,7 @@ class $modify(FPSGamblePlayLayer, PlayLayer) {
         // Trigger exactly once per death (re-armed after resetLevel)
         if (!canQueue(this)) return;
 
-        // Next tick, after death pipeline settles
+        // delayed
         this->scheduleOnce(schedule_selector(FPSGamblePlayLayer::runDeathRoulette), 0.0001f);
     }
 };
