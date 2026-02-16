@@ -1,3 +1,5 @@
-# Template Mod
+# FPS GAMBLING
+Every time you die, your FPS changes randomly.
 
-Edit about.md to change this
+## other things
+logo by chatgpt 5.2
