@@ -1,10 +1,7 @@
 {
 	"geode": "5.0.0-beta.2",
 	"gd": {
-		"win": "2.2081",
-		"android": "2.2081",
-		"mac": "2.2081",
-		"ios": "2.2081"
+		"win": "2.2081"
 	},
 	"id": "bunchuq1122.fps-gamble",
 	"name": "FPS GAMBLE",
@@ -15,65 +12,72 @@
 		"geode.node-ids": ">=v1.20.0"
 	},
 	"settings": {
-  "roulette-title": {
-    "type": "title",
-    "name": "Death Roulette FPS"
-  },
+    "roulette-title": {
+      "type": "title",
+      "name": "Death Roulette FPS"
+    },
 
-  "roulette-min": {
-    "type": "int",
-    "name": "Minimum Number",
-    "description": "Minimum roulette number (FPS will be picked in this range).",
-    "default": 1,
-    "min": 1,
-    "max": 360,
+    "roulette-min": {
+      "type": "int",
+      "name": "Minimum Number",
+      "description": "Minimum roulette number (FPS will be picked in this range).",
+      "default": 1,
+      "min": 1,
+      "max": 360,
+      "controls": {
+        "arrows": true,
+        "arrow-step": 1,
+        "big-arrows": true,
+        "big-arrow-step": 10,
+        "slider": true,
+        "slider-step": 1,
+        "input": true
+      }
+    },
+
+    "roulette-max": {
+      "type": "int",
+      "name": "Maximum Number",
+      "description": "Maximum roulette number (FPS will be picked in this range).",
+      "default": 360,
+      "min": 1,
+      "max": 360,
+      "controls": {
+        "arrows": true,
+        "arrow-step": 1,
+        "big-arrows": true,
+        "big-arrow-step": 10,
+        "slider": true,
+        "slider-step": 1,
+        "input": true
+      }
+    },
+    "roulette-speed": {
+    "type": "float",
+    "name": "Roulette Speed",
+    "description": "Higher = faster spin, lower = slower spin.",
+    "default": 1.0,
+    "min": 0.3,
+    "max": 3.0,
     "controls": {
-      "arrows": true,
-      "arrow-step": 1,
-      "big-arrows": true,
-      "big-arrow-step": 10,
       "slider": true,
-      "slider-step": 1,
+      "slider-step": 0.05,
       "input": true
     }
   },
 
-  "roulette-max": {
-    "type": "int",
-    "name": "Maximum Number",
-    "description": "Maximum roulette number (FPS will be picked in this range).",
-    "default": 360,
-    "min": 1,
-    "max": 360,
-    "controls": {
-      "arrows": true,
-      "arrow-step": 1,
-      "big-arrows": true,
-      "big-arrow-step": 10,
-      "slider": true,
-      "slider-step": 1,
-      "input": true
-    }
-  },
-  "roulette-speed": {
-  "type": "float",
-  "name": "Roulette Speed",
-  "description": "Higher = faster spin, lower = slower spin.",
-  "default": 1.0,
-  "min": 0.3,
-  "max": 3.0,
-  "controls": {
-    "slider": true,
-    "slider-step": 0.05,
-    "input": true
+  "roulette-hide-bg": {
+    "type": "bool",
+    "name": "Hide Roulette Background",
+    "description": "Removes the dim background + panel images (only the roulette stays).",
+    "default": false
   }
-},
-
-"roulette-hide-bg": {
-  "type": "bool",
-  "name": "Hide Roulette Background",
-  "description": "Removes the dim background + panel images (only the roulette stays).",
-  "default": false
-}
-}
+  },
+  "issues": {
+    "info": "report issues here",
+    "url": "https://github.com/bunchuq1122/FPS-Gambling/issues"
+  },
+  "tags": [
+    "gameplay", "universal", "offline", "content", "joke"
+  ]
 }
