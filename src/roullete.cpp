@@ -128,7 +128,7 @@ namespace fpsg
             if (!hideBg)
             {
                 auto panel = CCScale9Sprite::create("GJ_square01.png");
-                panel->setContentSize({420.f, 150.f});
+                panel->setContentSize({420.f, 100.f});
                 panel->setPosition(center);
                 panel->setOpacity(235);
                 this->addChild(panel, 1);
