@@ -1,83 +1,86 @@
 {
-	"geode": "5.0.0-beta.2",
-	"gd": {
-		"win": "2.2081"
-	},
-	"id": "bunchuq1122.fps-gamble",
-	"name": "FPS GAMBLE",
-	"version": "v1.0.2",
-	"developer": "Bunchuq1122",
-	"description": "Have fun with FPS GAMBLING of DEATH",
-	"dependencies": {
-		"geode.node-ids": ">=v1.20.0"
-	},
-	"settings": {
-    "roulette-title": {
-      "type": "title",
-      "name": "Death Roulette FPS"
+    "geode": "5.0.0-beta.2",
+    "gd": {
+        "win": "2.2081"
     },
-
-    "roulette-min": {
-      "type": "int",
-      "name": "Minimum Number",
-      "description": "Minimum roulette number (FPS will be picked in this range).",
-      "default": 1,
-      "min": 1,
-      "max": 360,
-      "controls": {
-        "arrows": true,
-        "arrow-step": 1,
-        "big-arrows": true,
-        "big-arrow-step": 10,
-        "slider": true,
-        "slider-step": 1,
-        "input": true
-      }
+    "id": "bunchuq1122.fps-gamble",
+    "name": "FPS GAMBLE",
+    "version": "v1.0.3",
+    "developer": "Bunchuq1122",
+    "resources": {
+        "files": [
+            "resources/sfx/reward01.ogg",
+            "resources/sfx/chestClick.ogg"
+        ]
     },
-
-    "roulette-max": {
-      "type": "int",
-      "name": "Maximum Number",
-      "description": "Maximum roulette number (FPS will be picked in this range).",
-      "default": 360,
-      "min": 1,
-      "max": 360,
-      "controls": {
-        "arrows": true,
-        "arrow-step": 1,
-        "big-arrows": true,
-        "big-arrow-step": 10,
-        "slider": true,
-        "slider-step": 1,
-        "input": true
-      }
+    "description": "Have fun with FPS GAMBLING of DEATH",
+    "dependencies": {
+        "geode.node-ids": ">=v1.20.0"
     },
-    "roulette-speed": {
-    "type": "float",
-    "name": "Roulette Speed",
-    "description": "Higher = faster spin, lower = slower spin.",
-    "default": 1.0,
-    "min": 0.3,
-    "max": 3.0,
-    "controls": {
-      "slider": true,
-      "slider-step": 0.05,
-      "input": true
+    "settings": {
+        "roulette-title": {
+            "type": "title",
+            "name": "Death Roulette FPS"
+        },
+        "roulette-min": {
+            "type": "int",
+            "name": "Minimum Number",
+            "description": "Minimum roulette number (FPS will be picked in this range).",
+            "default": 1,
+            "min": 1,
+            "max": 360,
+            "control": {
+                "arrows": true,
+                "arrow-step": 1,
+                "big-arrows": true,
+                "big-arrow-step": 10,
+                "slider": true,
+                "slider-step": 1,
+                "input": true
+            }
+        },
+        "roulette-max": {
+            "type": "int",
+            "name": "Maximum Number",
+            "description": "Maximum roulette number (FPS will be picked in this range).",
+            "default": 360,
+            "min": 1,
+            "max": 1000
+        },
+        "roulette-speed": {
+            "type": "float",
+            "name": "Roulette Speed",
+            "description": "Higher = faster spin, lower = slower spin.",
+            "default": 1,
+            "min": 0.3,
+            "max": 3
+        },
+        "roulette-hide-bg": {
+            "type": "bool",
+            "name": "Hide Roulette Background",
+            "description": "Removes the dim background + panel images (only the roulette stays).",
+            "default": false
+        },
+        "roulette-delay": {
+            "type": "float",
+            "name": "Result Delay (seconds)",
+            "default": 0.8,
+            "min": 0,
+            "max": 10
+        }
+    },
+    "issues": {
+        "info": "report issues here",
+        "url": "https://github.com/bunchuq1122/FPS-Gambling/issues"
+    },
+    "tags": [
+        "gameplay",
+        "universal",
+        "offline",
+        "content",
+        "joke"
+    ],
+    "links": {
+        "source": "https://github.com/bunchuq1122/FPS-Gambling"
     }
-  },
-
-  "roulette-hide-bg": {
-    "type": "bool",
-    "name": "Hide Roulette Background",
-    "description": "Removes the dim background + panel images (only the roulette stays).",
-    "default": false
-  }
-  },
-  "issues": {
-    "info": "report issues here",
-    "url": "https://github.com/bunchuq1122/FPS-Gambling/issues"
-  },
-  "tags": [
-    "gameplay", "universal", "offline", "content", "joke"
-  ]
 }
