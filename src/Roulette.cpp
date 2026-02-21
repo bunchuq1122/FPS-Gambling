@@ -22,7 +22,7 @@ namespace fpsg::settings
 namespace fpsg
 {
 
-    static int randInt(int a, int b) // beautiful random number generator
+    static int s_randInt(int a, int b) // beautiful random number generator
     {
         static std::mt19937 rng{std::random_device{}()};
         std::uniform_int_distribution<int> dist(a, b);
@@ -38,29 +38,29 @@ namespace fpsg
             std::chrono::steady_clock::time_point::min();
     };
 
-    static std::unordered_map<PlayLayer *, State> &states()
+    static std::unordered_map<PlayLayer *, State>& states()
     {
         static std::unordered_map<PlayLayer *, State> s;
         return s;
     }
 
-    void clearFor(PlayLayer *pl) { states().erase(pl); }
+    void clearFor(PlayLayer* pl) { states().erase(pl); }
 
-    void disarmForReset(PlayLayer *pl)
+    void disarmForReset(PlayLayer* pl)
     {
-        auto &st = states()[pl];
+        auto& st = states()[pl];
         st.isready = false;
         st.queued = false;
     }
 
-    static void armNow(PlayLayer *pl)
+    static void armNow(PlayLayer* pl)
     {
-        auto &st = states()[pl];
+        auto& st = states()[pl];
         st.isready = true;
         st.queued = false;
     }
 
-    void armAfterResetSoon(PlayLayer *pl, float delaySeconds)
+    void armAfterResetSoon(PlayLayer* pl, float delaySeconds)
     {
         if (!pl)
             return;
@@ -71,7 +71,7 @@ namespace fpsg
             nullptr));
     }
 
-    void armAfterEnterSoon(PlayLayer *pl, float delaySeconds)
+    void armAfterEnterSoon(PlayLayer* pl, float delaySeconds)
     {
         if (!pl)
             return;
@@ -85,7 +85,7 @@ namespace fpsg
     class RouletteOverlay final : public CCLayerColor
     {
     public:
-        static RouletteOverlay *create(PlayLayer *pl, int minV, int maxV, float speedMul, bool hideBg)
+        static RouletteOverlay* create(PlayLayer* pl, int minV, int maxV, float speedMul, bool hideBg)
         {
             auto ret = new RouletteOverlay();
             if (ret && ret->init(pl, minV, maxV, speedMul, hideBg))
@@ -101,12 +101,12 @@ namespace fpsg
 
     private:
         PlayLayer *m_pl = nullptr;
-        CCNode *m_strip = nullptr;
-        CCLabelBMFont *m_resultfps = nullptr;
+        CCNode* m_strip = nullptr;
+        CCLabelBMFont* m_resultfps = nullptr;
         int m_pick = 60;
         float m_endX = 0.f;
 
-        bool init(PlayLayer *pl, int minV, int maxV, float speedMul, bool hideBg)
+        bool init(PlayLayer* pl, int minV, int maxV, float speedMul, bool hideBg)
         {
             m_pl = pl;
 
@@ -161,7 +161,7 @@ namespace fpsg
             const int repeats = 12;
             const float step = 36.f;
 
-            m_pick = randInt(minV, maxV);
+            m_pick = s_randInt(minV, maxV);
 
             const int targetIndexInCycle = (m_pick - minV);
             const int targetIndex = (repeats - 2) * count + targetIndexInCycle;
@@ -245,9 +245,9 @@ namespace fpsg
         }
     };
 
-    static void startRoulette(PlayLayer *pl)
+    static void startRoulette(PlayLayer* pl)
     {
-        auto &st = states()[pl];
+        auto& st = states()[pl];
         st.queued = false;
         st.isrotating = true;
         st.isready = false;
@@ -263,12 +263,12 @@ namespace fpsg
         pl->pauseSchedulerAndActions();
     }
 
-    void tryStartOnDeath(PlayLayer *pl)
+    void tryStartOnDeath(PlayLayer* pl)
     {
         if (!pl)
             return;
 
-        auto &st = states()[pl];
+        auto& st = states()[pl];
         const auto now = std::chrono::steady_clock::now();
 
         if (!st.isready)

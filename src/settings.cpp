@@ -1,7 +1,7 @@
 #include <Geode/Geode.hpp>
 #include <algorithm>
 
-// i tramslated all comments using 'Translate Comments' extension.
+// i translated all comments using 'Translate Comments' extension.
 
 using namespace geode::prelude;
 
@@ -55,7 +55,7 @@ namespace fpsg::settings
             v = mod->getSettingValue<double>("roulette-delay");
 
         float f = (float)v;
-        return std::max(0.f, std::min(f, 10.f)); // 0~10초 제한
+        return std::max(0.f, std::min(f, 10.f));
     }
 
     // Sound effect on/off
@@ -72,6 +72,3 @@ namespace fpsg::settings
         return 1200;
     }
 }
-
-
-// Clang Format
