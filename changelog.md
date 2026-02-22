@@ -10,3 +10,6 @@
 # 1.0.3
 - removed ai-generated logo
 - changed all of codes
+
+# 1.0.3
+- updated for new Geode Version(5.0.0-beta.4)
