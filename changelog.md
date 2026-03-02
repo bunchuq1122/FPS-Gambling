@@ -11,5 +11,8 @@
 - removed ai-generated logo
 - changed all of codes
 
-# 1.0.3
+# 1.0.4
 - updated for new Geode Version(5.0.0-beta.4)
+
+# 1.0.5
+- mod id changed

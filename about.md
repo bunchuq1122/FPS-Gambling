@@ -1,5 +1,2 @@
-# FPS GAMBLING
-Every time you die, your FPS changes randomly.
-
-## other things
-idk
+# FPS GAMBLE
+Every time you die, your <cj>FPS</c> changes <cr>randomly.</c>

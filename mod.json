@@ -1,11 +1,11 @@
 {
-    "geode": "5.0.0-beta.4",
+    "geode": "5.3.0",
     "gd": {
         "win": "2.2081"
     },
-    "id": "bunchuq1122.fps-gamble",
-    "name": "FPS GAMBLE",
-    "version": "v1.0.4",
+    "id": "bunchuq1122.fps-gambling",
+    "name": "FPS GAMBLING",
+    "version": "v1.0.5",
     "developer": "Bunchuq1122",
     "resources": {
         "files": [
